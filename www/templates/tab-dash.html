@@ -1,0 +1,17 @@
+<ion-view view-title="ResNet Status">
+  <ion-content class="positive" ng-controller="DashCtrl">
+    <div ng-controller="DashCtrl" ng-init="getStatus()">
+    <ion-refresher
+      spinner="none"
+      on-refresh="getStatus()">
+    </ion-refresher>
+      <p>ResNet Penalty Box Status</p>
+      <p>IP address:{{ip}}</p>
+      <p>Usage (Last 24 hours):{{usage}}</p>
+      <p>Current Status:{{currentstatus}}</p>
+      <p>Last Updated:{{lastupdated}}</p>
+      <p>{{using}}</p>
+      <pie-chart data="gauge_data" options="gauge_options"></pie-chart>
+    </div>
+  </ion-content>
+</ion-view>

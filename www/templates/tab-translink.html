@@ -1,0 +1,20 @@
+<ion-view view-title="TransLink">
+  <ion-content class="padding" ng-controller="TranslinkCtrl">
+    <h2 class="text-center">Next bus</h2>
+    <div class="item item-input-inset">
+      <label class="item-input-wrapper">
+        <input type="text" placeholder="StopNumber" ng-model="stopnumber">
+      </label>
+      <button ng-click="request(stopnumber)" class="button button-small button-positive">Search</button>
+      <ion-refresher
+        spinner="none"
+        on-refresh="request(stopnumber)">
+      </ion-refresher>
+    </div>
+    <div class="row responsive-sm">
+      {{error}}
+      <div class="col" ng-repeat="rschedule in rschedules">{{rschedule.routeno}} {{rschedule.schedules.toString()}}
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

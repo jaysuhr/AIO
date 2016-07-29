@@ -1,0 +1,18 @@
+<ion-view view-title="홍대포차">
+  <ion-content class="text-center">
+    <div ng-hide="true" class="item item-input-inset">
+      <label class="item-input-wrapper">
+        <input type="text" placeholder="빼던지" ng-model="item">
+      </label>
+      <button ng-click="exclude(item)" class="button button-small button-positive">빼</button>
+    </div>
+
+    <button class="button button-block button-positive" ng-click="random()">
+      메뉴골라주떼영
+    </button>
+    <div class="row responsive-sm">
+      <div class="col" ng-repeat="menu in menus" ng-show="menu == m">{{menu}}
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
